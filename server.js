@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import leadRoutes from "./Routers/leadRoutes.js";
 import eventRoutes from "./Routers/eventRoutes.js";
 import packageRoutes from "./Routers/packageRoutes.js";
+import quoteRoutes from "./Routers/quoteRoute.js";
 
 const app=express()
 dotenv.config()
@@ -38,6 +39,8 @@ app.get("/health", (req, res) => {
 app.use("/api/leads", leadRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/events", packageRoutes);
+app.use("/api/quotes", quoteRoutes);
+
 
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`)
