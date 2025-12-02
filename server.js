@@ -3,7 +3,8 @@ import dotenv from "dotenv"
 import cors from 'cors'
 import connectDB from './DB/db.js'
 import cookieParser from "cookie-parser";
-
+import leadRoutes from "./Routers/leadRoutes.js";
+import eventRoutes from "./Routers/eventRoutes.js";
 
 const app=express()
 dotenv.config()
@@ -25,6 +26,16 @@ const PORT=process.env.PORT || 5010
 
 connectDB()
 
+// Updated Health Route
+app.get("/health", (req, res) => {
+    res.json({
+        status: "OK",
+        uptime: process.uptime(),
+        timestamp: new Date(),
+    });
+});
+app.use("/api/leads", leadRoutes);
+app.use("/api/events", eventRoutes);
 
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`)
