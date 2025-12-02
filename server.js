@@ -5,6 +5,7 @@ import connectDB from './DB/db.js'
 import cookieParser from "cookie-parser";
 import leadRoutes from "./Routers/leadRoutes.js";
 import eventRoutes from "./Routers/eventRoutes.js";
+import packageRoutes from "./Routers/packageRoutes.js";
 
 const app=express()
 dotenv.config()
@@ -36,6 +37,7 @@ app.get("/health", (req, res) => {
 });
 app.use("/api/leads", leadRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/events", packageRoutes);
 
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`)
