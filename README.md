@@ -1,4 +1,4 @@
-🏆Sports Trip Booking API
+🏆Sports Travel Packages 
 
 A backend service to manage Events → Packages → Leads → Quotes for sports trip bookings.
 
