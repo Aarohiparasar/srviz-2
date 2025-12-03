@@ -80,7 +80,7 @@ const BookingForm = ({ open, onClose, eventId, packageId, packageTitle }) => {
     name: '',
     email: '',
     phone: '',
-    travellers: 2,
+    travellers: 1,
     eventId,
     packageId
   });
@@ -205,7 +205,7 @@ const BookingForm = ({ open, onClose, eventId, packageId, packageTitle }) => {
                 margin="normal"
                 variant="outlined"
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">+</InputAdornment>,
+                  startAdornment: <InputAdornment position="start">+91</InputAdornment>,
                 }}
               />
             </Grid>
